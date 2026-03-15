@@ -1,0 +1,23 @@
+services:
+  # Servicio Frontend (Vite)
+  - type: web
+    name: chess-prestige-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishDir: dist
+    envVars:
+      - key: VITE_BACKEND_URL
+        fromService:
+          name: chess-prestige-backend
+          type: web
+          property: host
+
+  # Servicio Backend (Node.js/Socket.io)
+  - type: web
+    name: chess-prestige-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
+    envVars:
+      - key: PORT
+        value: 10000

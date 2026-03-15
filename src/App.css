@@ -1,0 +1,26 @@
+/* App-specific local styles (mostly empty as we use utility classes or inline styles where needed) */
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title-section h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-section p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  font-weight: 300;
+}
